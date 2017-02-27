@@ -1,0 +1,27 @@
+
+likes-of-you-1.o:     file format elf32-i386
+
+Disassembly of section .text:
+
+00000000 <f1>:
+int
+f1(
+	int		x
+)
+{
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+	if( unlikely( x ) )	{
+   3:	83 7d 08 01          	cmpl   $0x1,0x8(%ebp)
+		x = 5;
+		x = x * x;
+	} else	{
+		x = 6;
+	}
+	return( x );
+}
+   7:	5d                   	pop    %ebp
+   8:	19 c0                	sbb    %eax,%eax
+   a:	83 e0 ed             	and    $0xffffffed,%eax
+   d:	83 c0 19             	add    $0x19,%eax
+  10:	c3                   	ret    
